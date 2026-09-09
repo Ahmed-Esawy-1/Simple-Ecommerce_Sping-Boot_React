@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+/* Class-based dark mode: toggling .dark on <html> flips every dark: utility */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-display: "Space Grotesk", ui-sans-serif, sans-serif;
+    --font-body: "Inter", ui-sans-serif, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+    /* Light surface */
+    --color-paper: #fafafa;
+    --color-surface: #ffffff;
+    --color-ink: #14171a;
+    --color-ink-soft: #5b6168;
+    --color-border: #e5e3de;
+
+    /* Dark surface */
+    --color-paper-dark: #0e1113;
+    --color-surface-dark: #171b1e;
+    --color-ink-dark: #ececea;
+    --color-ink-dark-soft: #9aa0a6;
+    --color-border-dark: #262b2f;
+
+    /* Brand */
+    --color-emerald-950: #0e2b23;
+    --color-emerald-700: #1f6f5c;
+    --color-emerald-500: #2f9e82;
+    --color-emerald-300: #7fd0b8;
+    --color-gold-600: #ab7f2c;
+    --color-gold-500: #c99a3f;
+    --color-red-600: #b3392f;
+    --color-red-400: #e0685d;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+}
+
+.dark body {
+    background-color: var(--color-paper-dark);
+    color: var(--color-ink-dark);
+}
+
+/* Visible keyboard focus everywhere */
+:focus-visible {
+    outline: 2px solid var(--color-emerald-500);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Slim scrollbar, quiet on both themes */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-border);
+    border-radius: 8px;
+}
+.dark ::-webkit-scrollbar-thumb {
+    background: var(--color-border-dark);
+}

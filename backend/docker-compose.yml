@@ -1,0 +1,11 @@
+services:
+  pgvector:
+    image: 'pgvector/pgvector:pg18'
+    environment:
+      - 'POSTGRES_DB=simpleEcommerce'
+      - 'POSTGRES_USER=postgres'
+      - 'POSTGRES_PASSWORD=ahmed'
+    labels:
+      - 'org.springframework.boot.service-connection=postgres'
+    ports:
+      - '5432'
