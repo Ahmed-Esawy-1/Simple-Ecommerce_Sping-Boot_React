@@ -40,13 +40,13 @@ The project provides product management, shopping cart functionality, order mana
 ## 1. Clone the Repository
 
 ```bash
-git clone https://github.com/Ahmed-Esawy-1/Simple-Ecommerce_Java-Sping-Boot_React.git
+git clone https://github.com/Ahmed-Esawy-1/Simple-Ecommerce_Sping-Boot_React.git
 ```
 
 Navigate to the project:
 
 ```bash
-cd Simple-Ecommerce_Java-Sping-Boot_React
+cd Simple-Ecommerce_Sping-Boot_React
 ```
 
 ---
